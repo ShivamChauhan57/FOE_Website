@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundations of Engineering Lab</title>
+  <style>
+   body {
+	   font-family: 'Oswald', Arial, sans-serif;
+      font-weight: bold;
+    margin: 0;
+    padding: 0;
+    
+    color: #ffffff;
+    }
+	  
+	#page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+	  #page-container {
+	    background-image: url("assets/pic1.jpg"); /* Replace "assets/pic1.jpg" with your background image path */
+	    background-size: cover;
+	    background-position: center;
+		  z-index: -10;
+		  
+	}
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #header h1 {
+    /*margin: 5;*/
+    font-size: 80px;
+    overflow: hidden; 
+    font-weight: normal;
+		
+    }
+
+    #header h1::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    #logo {
+    width: 400px;
+    height: 100px;
+    		
+    }
+
+    #main {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10%; 
+    }
+
+    .button {
+		font-size: 36px;
+      color: #000000;
+      text-align: left;
+      padding: 25px;
+      margin-bottom: 10px;
+      width: 400px;
+      cursor: pointer;
+      transition: font-size 0.3s;
+
+		text-decoration: none;
+		position: relative;
+		border-radius: 15px;
+		background-color: #fff;
+    }
+
+    .button:hover {
+     font-size: 44px;
+  }
+
+    .product-container {
+      position: relative; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin-right: 10%;
+	
+    }
+
+     .product-container img {
+      width: 200px; 
+      height: 200px; 
+      border-radius: 50%;
+      margin-bottom: 10px;
+		 z-index: 1;
+		 
+    }
+	  
+	  .product-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+
+    .product-container:hover {
+      transform: scale(1.3);
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+		padding-bottom: 20px;
+		padding-right: 100px;
+    }
+
+    .row:nth-child(2n) {
+      flex-direction: row-reverse;
+    }
+
+    #footer {
+      text-align: left;
+      padding: 20px;
+    }
+
+    #brand-logo {
+    
+    height: 50px;
+    }
+	  
+	  #slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    #slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: -10;
+    }
+	  .box-background {
+      background-color: #006747;
+      border-radius: 15px;
+      padding: 10px;
+    }
+	  
+	@media (min-width: 981px) and (max-width: 1440px) {
+            #header h1 {
+                font-size: 48px;
+            }
+
+            #logo {
+                width: 400px;
+    			height: 100px;
+                
+            }
+
+            .button {
+                font-size: 30px;
+                padding: 15px;
+				width: 250px;
+            }
+			.button-container {
+     			 display: flex;
+    			  flex-direction: column;
+     			 margin-left: 5%;
+   			 }
+	
+            .product-container img {
+                width: 150px;
+                height: 150px;
+            }
+		
+			.product-container {
+				  margin-right: 5%;
+				}
+
+            #brand-logo {
+                
+                height: 40px;
+            }
+		#page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+			background-image: url("assets/pic1.jpg"); 
+	   		 background-size: cover;
+	    	background-position: center;
+        }
+        }
+	  
+	  @media (min-width: 801px) and (max-width: 980px) {
+            #header h1 {
+                font-size: 48px;
+            }
+
+            #logo {
+                
+                width: 200px;
+    			height: 50px;
+            }
+
+            .button {
+                font-size: 20px;
+                padding: 12px;
+				width: 180px;
+            }
+			.button-container {
+     			 display: flex;
+    			  flex-direction: column;
+     			 margin-left: 5%;
+   			 }
+	
+            .product-container img {
+                width: 120px;
+                height: 120px;
+            }
+		
+			.product-container {
+				  margin-right: 5%;
+				}
+
+            #brand-logo {
+                
+                height: 40px;
+            }
+		#page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+	  }
+	
+		  @media (max-width: 800px) {
+            #header h1 {
+                font-size: 36px;
+            }
+
+            #logo {
+                width: 160px;
+    			height: 40px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 9px;
+				width: 130px;
+            }
+			.button-container {
+     			 display: flex;
+    			  flex-direction: column;
+     			 margin-left: 5%;
+   			 }
+	
+            .product-container img {
+                width: 100px;
+                height: 100px;
+            }
+		
+			.product-container {
+				  margin-right: 5%;
+				}
+
+            #brand-logo {
+                
+                height: 40px;
+            }
+		#page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+		
+        }
+	  
+  </style>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <div id="page-container">
+	<div id="slideshow">
+    <img src="assets/pic1.jpg" alt="Background 1">
+  
+  </div>
+	
+  <div id="header">
+    <div>
+		<img id="logo" src="assets/home/usf_logo.png" alt="Product Logo">
+		<h1 class ="box-background">&nbsp;Foundations of Engineering Lab</h1>
+
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="button-container">
+      <a class="button" href="about_us.html">About Us</a>
+      <a class="button" href="Resources.html">Resources</a>
+      <a class="button" href="syllabus.html">Syllabus</a>
+      <a class="button" href="faculty.html">Faculties</a>
+      <a class="button" href="TA.html">Teaching Assistants</a>
+      <a class="button" href="gallery.html">Gallery</a>
+	  <a class="button" href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <div class="row">
+        <div class="product-container">
+          <img src="assets/home/IMG_4274-removebg-preview.png" alt="Product 1">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/Capybot (2) (1).png" alt="Product 2">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/IMG_4247-removebg-preview.png" alt="Product 3">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="product-container">
+          <img src="assets/home/mariocart.png" alt="Product 4">
+         
+        </div>
+        <div class="product-container">
+          <img src="assets/home/IMG_5858-removebg-preview.png" alt="Product 5">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/Screw_Roboto.png" alt="Product 6">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="product-container">
+          <img src="assets/home/r2d2_robot-removebg-preview.png" alt="Product 7">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/20220427_125605__1_-removebg-preview.png" alt="Product 8">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/image-removebg-preview.png" alt="Product 9">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="product-container">
+          <img src="assets/home/bot12.png" alt="Product 10">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/bot11.png" alt="Product 11">
+          
+        </div>
+        <div class="product-container">
+          <img src="assets/home/bot10.png" alt="Product 12">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="footer">
+    <img id="brand-logo" src="img/smalllogo.png" alt="Brand Logo">
+  </div>
+
+	
+<script>
+    // JavaScript for the Slideshow
+    const images = document.querySelectorAll("#slideshow img");
+    let index = 0;
+
+    function changeImage() {
+      images[index].style.opacity = "0";
+      index = (index + 1) % images.length;
+      images[index].style.opacity = "0.5";
+    }
+
+    setInterval(changeImage, 5000); // Change image every 5 seconds
+ </script>
+</body>
+</html>
